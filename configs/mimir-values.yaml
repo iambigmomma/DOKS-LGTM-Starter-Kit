@@ -1,0 +1,12 @@
+mimir:
+  structuredConfig:
+    common:
+      storage:
+        backend: s3
+        s3:
+          endpoint: nyc3.digitaloceanspaces.com
+          bucket_name: mimir-bucket
+          access_key_id: <your-access-key>
+          secret_access_key: <your-secret-key>
+    blocks_storage:
+      backend: s3

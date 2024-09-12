@@ -1,0 +1,17 @@
+grafana:
+  adminPassword: "admin"
+  persistence:
+    enabled: true
+    storageClassName: "do-block-storage"
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          type: prometheus
+          url: http://prometheus-server.monitoring.svc.cluster.local
+          access: proxy
+          isDefault: true

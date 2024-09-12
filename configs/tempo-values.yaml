@@ -1,0 +1,36 @@
+# Tempo configuration for Helm deployment
+
+ingester:
+  replicas: 2
+  persistence:
+    enabled: true
+    size: 10Gi
+
+distributor:
+  replicas: 2
+
+querier:
+  replicas: 2
+
+compactor:
+  replicas: 2
+
+storage:
+  trace:
+    backend: s3
+    s3:
+      endpoint: nyc3.digitaloceanspaces.com
+      bucket: tempo-traces
+      access_key: <your access key> # replace with your actual access key
+      secret_key: <your secret key> # replace with your actual secret key
+      insecure: false
+
+serviceMonitor:
+  enabled: true
+
+tempo:
+  metricsGenerator:
+    enabled: true
+
+tempoQueryFrontend:
+  enabled: true

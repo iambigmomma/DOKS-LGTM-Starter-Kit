@@ -1,0 +1,7 @@
+prometheus:
+  prometheusSpec:
+    retention: 30d
+    externalLabels:
+      cluster: "production-cluster"
+grafana:
+  adminPassword: "admin"
